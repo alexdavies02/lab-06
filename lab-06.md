@@ -39,6 +39,46 @@ df <- tribble(
 
 ### Exercise 2
 
+``` r
+df2 <- tribble(
+  ~days, ~masks_count, ~nomasks_count,
+  1,25,10,
+  2,20,9,
+  3,20,10,
+  4,20,10,
+  5,20,10,
+  6,20,9,
+  7,20,9,
+  8,20,9,
+  9,20,9,
+  10,21,9,
+  11,20,9,
+  12,20,10,
+  13,21,10,
+  14,19,10,
+  15,17,9,
+  16,16,9,
+  17,16,9,
+  18,16,10,
+  19,16,9,
+  20,16,9,
+  21,16,9,
+)
+
+
+df2 %>%
+  ggplot(aes(days)) +
+  geom_line(aes(y = masks_count, colour = "masks_count")) +
+  geom_line(aes(y = nomasks_count, colour = "nomasks_count")) +
+  labs (x = "days past 7/11/2020", y = "Daily Cases per 100k population")
+```
+
+![](lab-06_files/figure-gfm/better-viz-1.png)<!-- -->
+
+``` r
+  #geom_col(mapping = aes(x = days, y = nomasks_count))
+```
+
 ### Exercise 3
 
 *Add your narrative here.*
